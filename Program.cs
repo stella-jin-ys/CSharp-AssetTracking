@@ -7,6 +7,7 @@ public class Program
     {
         ManageAssets manageAssets = new ManageAssets();
         manageAssets.AddAssets();
+        manageAssets.ShowAssets();
 
     }
 
