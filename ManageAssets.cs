@@ -136,19 +136,19 @@ public class ManageAssets
         Sort();
         Console.WriteLine("Type".PadRight(20) + "Brand".PadRight(20) + "Model".PadRight(20) + "Office".PadRight(20) + "Purchase Date".PadRight(20) + "Price in USD".PadRight(20) + "Currency".PadRight(20) + "Local price".PadRight(20));
         int threeYears = 365 * 3;
-        int threeMonths = 30 * 3;
-        int sixMonths = 30 * 6;
+        int twoAndSevenYears = (int)(365 * 2.7);
+        int twoAndFourYears = (int)(365 * 2.4);
 
         foreach (var a in assets)
         {
             int validDays = DateOnly.FromDateTime(DateTime.Now).DayNumber - a.PurchaseDate.DayNumber;
             ConsoleColor color = ConsoleColor.White;
 
-            if (validDays > threeYears || threeYears - validDays <= threeMonths)
+            if (validDays > twoAndSevenYears)
             {
                 color = ConsoleColor.Red;
             }
-            else if (threeMonths <= threeYears - validDays && threeYears - validDays <= sixMonths)
+            else if (validDays > twoAndFourYears && validDays <= twoAndSevenYears)
             {
                 color = ConsoleColor.Yellow;
             }
